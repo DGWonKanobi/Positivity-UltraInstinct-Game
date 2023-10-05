@@ -1,58 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Positivity Ultra Instinct Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas Crawler</title>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-    <div class="game-container">
-       
-        <div class="game-header">
-            <h1>Welcome to Positivity Ultra Instinct</h1>
-            <p>Enter your username and descriptors</p>
-            <input type="text" id="username" placeholder="Enter your username">
-           
-            <div class="descriptor-input">
-                <label>Negative Descriptors:</label>
-                <input type="text" id="negative1" placeholder="Negative Descriptor 1">
-                <input type="text" id="negative2" placeholder="Negative Descriptor 2">
-                <input type="text" id="negative3" placeholder="Negative Descriptor 3">
-                <input type="text" id="negative4" placeholder="Negative Descriptor 4">
-            </div>
-           
-            <div class="descriptor-input">
-                <label>Positive Descriptors:</label>
-                <input type="text" id="positive1" placeholder="Positive Descriptor 1">
-                <input type="text" id="positive2" placeholder="Positive Descriptor 2">
-                <input type="text" id="positive3" placeholder="Positive Descriptor 3">
-                <input type="text" id="positive4" placeholder="Positive Descriptor 4">
-            </div>
-            
-            <button id="start-button">Start Game</button>
-        
-        </div>
-        
-        
-        
-        
-        <div class="game-content">
-            <div id="player"></div>
-            <!-- Falling objects will be added dynamically using JavaScript -->
-        </div>
-       
-        <div class="game-footer">
-            <p>Life Score: <span id="life-score">0</span></p>
-        </div>
-
-    </div>
-    
-    <script src="app.js"></script>
+  <div class="imageContainer">
+    <img src="./img/mush.png" alt="mushroom" id="mush" style="display: none;">
+    <img src="./img/dungeonhell.png" alt="dungeonhell" id="dungeonhell" style="display: none;">
+  </div>
+  <div id="container">
+    <aside id="top-left"><h2>Slay the Shrek</h2></aside>
+    <aside id="top-right"><h2 id="movement"></h2></aside>
+    <main>
+        <canvas id="game"><!-- play it, a game --></canvas>
+    </main>
+    <aside id="btm-left"><h2 id="score">100</h2></aside>
+    <aside id="btm-right"><h2 id="status">play the game</h2></aside>
+  </div>
+  <script src="/app.js"></script>
 </body>
-
 </html>
-

@@ -3,8 +3,8 @@
 
 // User input
 const username = prompt("Enter your username:");
-const negatives = ["avoid1", "avoid2", "avoid3", "avoid4"];
-const positives = ["attract1", "attract2", "attract3", "attract4"];
+const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
+const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
 
 // Countdown timer
 // ...
