@@ -13,7 +13,14 @@ The User Icon will change depending on the life score the player has accumulted 
 
 Game Flow Road Map:
 
-Phase1 : Screen Launches with Prompt . "Welcome to Positivity Ultra Instinct". And User is prompted to enter their name  followed by four things they want to focus on avoiding and also four things they want to focus on manifesting.
+Phase1 : Screen Launches with Prompt : "Welcome to Positivity Ultra Instinct".  User is prompted to enter their user name  followed by four things they want to focus on avoiding and also four things they want to focus on manifesting.
+
+Phase2 : After entering required information. Instructions with a 10 second count down clock appears advising the User to "Avoid the bad objects and capture the good ojects and you will break through all of your limits , master yourself and win the game!!! You Can do it!!! 
+
+Phase 3 : Screen appears with an object with assigned graphic a saiyan character in their lowest form which can move up , down , left, or right using the keyboard arrow commands. Dragon Ball theme music plays and the negative and positive objects start to through pre assigned randomness cascade down the screen and the user score inscreases or decreases based on it's collision with these objects.
+
+
+Phase 4 : The User Life Score Box will increase or decrease value based on kinds of collisions that happen to our user object . This value will determine through ranges what Game User icon to display. Once the highest Assigned Value is achieved the final icon of the user ojbect appears .  Then a Screen pops up saying "You Have Won!! You have Positivity Ultra Instict" with Goku Anime picture in background.
 
 
 
