@@ -2,26 +2,51 @@
 // ...
 
 // User input
-const username = prompt("Enter your username:");
+
 const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
 const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
 
-// // GLOBAL DOM / VARIABLES
-// const mushroom = document.querySelector('#mush');
-// const movement = document.querySelector('#movement');
-// const game = document.querySelector('#game');
-// const score = document.querySelector('#score');
-// const status = document.querySelector('#status');
-// const ctx = game.getContext('2d');
-// let shrek;
-// let donkey;
+function getRandomNegative() {
+    const randomIndex = Math.floor(Math.random() * negatives.length);
+    return negatives[randomIndex];
+}
+
+function getRandomPositive() {
+    const randomIndex = Math.floor(Math.random() * positives.length);
+    return positives[randomIndex];
+}
+
+//We can use the Math.random() function to generate a random number within the range of the array indices
+
+
+
+
+
+// Example usage:
+const randomNegative = getRandomNegative();
+const randomPositive = getRandomPositive();
+
+console.log("Random Negative: " + randomNegative);
+console.log("Random Positive: " + randomPositive);
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ====================== PAINT INTIAL SCREEN ======================= //
 // EVENT LISTENERS
 window.addEventListener('DOMContentLoaded', function () {
     //load the donkey on the shrek on page 
-    shrek = new Crawler(100, 200, '#bad55', 50, 100);
-    donkey = new Crawler(10, 20, 'brown', 25, 25);
+    saiyan = new Saiyan(100, 200, '#bad55', 50, 100);
+    // donkey = new Crawler(10, 20, 'brown', 25, 25);
 
     let runGame = setInterval(gameLoop, 60);
 })
@@ -34,7 +59,7 @@ game.setAttribute('height', getComputedStyle(game)['height']);
 game.setAttribute('width', getComputedStyle(game)['width']);
 
 // ====================== ENTITIES ======================= //
-class Crawler {
+class Saiyan {
     constructor(x, y, color, width, height) {
         this.x = x;
         this.y = y;
@@ -60,13 +85,13 @@ function movementHandler(e) {
 
     // make a conditional for each direction
     if (e.key === 'w' || e.key === 'ArrowUp') {
-        donkey.y - 10 >= 0 ? (donkey.y -= 10) : null;
+        saiyan.y - 10 >= 0 ? (saiyan.y -= 10) : null;
     } else if (e.key === 's' || e.key === 'ArrowDown') {
-        donkey.y + 10 <= game.height - donkey.height ? (donkey.y += 10) : null;
+        saiyan.y + 10 <= game.height - saiyan.height ? (saiyan.y += 10) : null;
     } else if (e.key === 'a' || e.key === 'ArrowLeft') {
-        donkey.x - 10 >= 0 ? (donkey.x -= 10) : null;
+        saiyan.x - 10 >= 0 ? (saiyan.x -= 10) : null;
     } else if (e.key === 'd' || e.key === 'ArrowRight') {
-        donkey.x + 10 <= game.width - donkey.width ? (donkey.x += 10) : null;
+        saiyan.x + 10 <= game.width - saiyan.width ? (saiyan.x += 10) : null;
     }
 
 }
@@ -127,8 +152,8 @@ function movementHandler(e) {
 
 
 // ====================== HELPER FUNCTIONS ======================= //
-function addNewShrek() {
-    shrek.alive = false;
+function addNewSaiyan() {
+    saiyan.alive = false;
     //use setTime function createa new Shrek after1 second ( 1000 milliseconds)
     setTimeout(function () {
         let randomX = Math.floor(Math.random() * game.width - 40);
@@ -138,7 +163,7 @@ function addNewShrek() {
         let randomIndex = Math.floor(Math.random() * colors.length - 1);
         let randomColor = colors[randomIndex];
         // create new Shrek
-        shrek = new Crawler(randomX, randomY, randomColor, 50, 100);
+        saiyan = new Crawler(randomX, randomY, randomColor, 50, 100);
     }, 1000);
     return true;
 }
@@ -178,7 +203,7 @@ function detectHit(player, opp) {
         console.log(score.textContent);
         score.textContent = newScore;
         // return a new Shrek with the addNewShrek function
-        return addNewShrek();
+        return addNewSaiyan();
     } else {
         return false;
     }
