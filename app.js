@@ -1,7 +1,7 @@
-// Game Flow Code
+// Game Flow
+// ...
 
-
-//Positive and Negative Descriptors
+// User input
 
 const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
 const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
@@ -15,28 +15,66 @@ function getRandomPositive() {
     const randomIndex = Math.floor(Math.random() * positives.length);
     return positives[randomIndex];
 }
+
 //We can use the Math.random() function to generate a random number within the range of the array indices
 
 
-// Example usage:
-const randomNegative = getRandomNegative();
-const randomPositive = getRandomPositive();
+const saiyanImage = document.querySelector('#saiyan')
 
-console.log("Random Negative: " + randomNegative);
-console.log("Random Positive: " + randomPositive);
+const player = {
+    x: canvas.width / 2,
+    y: canvas.height - 30,
+    width: 50,
+    height: 50,
+    speed: 5
+};
+
+
+// Initialize game variables
+let score = 0;
+let lifeScore = 100; // You can set the initial life score as needed
+let gameOver = false;
+
+
+function drawPlayer() {
+    ctx.fillStyle = "#ff5733"; // Saiyan character color (orange)
+    ctx.fillRect(player.x, player.y, player.width, player.height);
 
 
 
+    // Update and display life score
+function updateLifeScore() {
+    if (!gameOver) {
+        
+        lifeScore -= 0.1;
+
+        // Display the updated life score
+        document.getElementById("score").textContent = Math.round(lifeScore);
+
+        // Check for game over condition
+        if (lifeScore <= 0) {
+            gameOver = true;
+            endGame();
+        }
+    }
+}
 
 
+// Handle the end of the game
+function endGame() {
+    // Implement game over logic here
+    // Display a message, reset the game, etc.
+}
 
+// Start the game loop
+gameLoop();
 
 // ====================== PAINT INTIAL SCREEN ======================= //
 // EVENT LISTENERS
 window.addEventListener('DOMContentLoaded', function () {
-    //load the donkey on the shrek on page 
+    //load the saiyan on the game opage 
     saiyan = new Saiyan(100, 200, '#bad55', 50, 100);
-    // donkey = new Crawler(10, 20, 'brown', 25, 25);
+    
 
     let runGame = setInterval(gameLoop, 60);
 })
@@ -68,7 +106,6 @@ class Saiyan {
 // let testCrawler = new Crawler(150, 20, 'blue', 200, 200);
 // testCrawler.render();
 
-
 // KEYBOARD LOGIC
 
 function movementHandler(e) {
@@ -87,59 +124,6 @@ function movementHandler(e) {
 }
 
 
-// function shrekAIMovement() {
-//     // make a conditional for each direction
-//     // first move the shrek up, then move to the right, then to the left, the down and repeat
-//     console.log('Shrek AI');
-//     moveUp();
-//     moveUp();
-
-//     setTimeout(() => {
-//         moveRight();
-//         moveRight();
-//     }, 500);
-
-//     setTimeout(() => {
-//         moveDown();
-//         moveDown();
-//     }, 1000);
-
-// }
-
-// function moveUp() {
-//     if (shrek.y - 10 >= 0) {
-//         shrek.y -= 10;
-//     } else {
-//         shrek.y = 100
-//     }
-// }
-
-// function moveRight() {
-//     if (shrek.x + 10 <= game.width - shrek.width) {
-//         shrek.x += 10;
-//     } else {
-//         shrek.x = 100;
-//     }
-// }
-
-// function moveDown() {
-//     if (shrek.y + 10 <= game.height - shrek.height) {
-//         shrek.y += 10
-//     } else {
-//         shrek.y = 100;
-//     }
-// }
-
-// function moveLeft() {
-//     if (shrek.x - 10 >= 10) {
-//         shrek.x -= 10
-//     } else {
-//         shrek.x = 100;
-//     }
-// }
-
-
-
 
 // ====================== HELPER FUNCTIONS ======================= //
 function addNewSaiyan() {
@@ -153,7 +137,7 @@ function addNewSaiyan() {
         let randomIndex = Math.floor(Math.random() * colors.length - 1);
         let randomColor = colors[randomIndex];
         // create new Shrek
-        saiyan = new Crawler(randomX, randomY, randomColor, 50, 100);
+        saiyan = new Saiyan(randomX, randomY, randomColor, 50, 100);
     }, 1000);
     return true;
 }
@@ -163,19 +147,19 @@ function gameLoop() {
     // clear the canvas
     ctx.clearRect(0, 0, game.width, game.height)
     //display x and y coordinates for our donkey
-    movement.textContent = `X: ${donkey.x}\nY: ${donkey.y}`;
+    movement.textContent = `X: ${saiyan.x}\nY: ${saiyan.y}`;
 
     // check to see if shrek is alive
-    if (shrek.alive) {
+    if (saiyan.alive) {
         // render the shrek
-        shrek.render();
+        saiyan.render();
         // check for collision between donkey and shrek
         let hit = detectHit(donkey, shrek);
 
 
     }
     //render the donkey
-    donkey.render();
+    saiyan.render();
 }
 // ====================== COLLISION DETECTION ======================= //
 

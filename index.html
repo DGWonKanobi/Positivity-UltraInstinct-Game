@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Canvas Crawler</title>
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Positivity Ultra Instinct Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="imageContainer">
-    <img src="./img/mush.png" alt="mushroom" id="mush" style="display: none;">
-    <img src="./img/dungeonhell.png" alt="dungeonhell" id="dungeonhell" style="display: none;">
-  </div>
-  <div id="container">
-    <aside id="top-left"><h2>Slay the Shrek</h2></aside>
-    <aside id="top-right"><h2 id="movement"></h2></aside>
-    <main>
-        <canvas id="game"><!-- play it, a game --></canvas>
-    </main>
-    <aside id="btm-left"><h2 id="score">100</h2></aside>
-    <aside id="btm-right"><h2 id="status">play the game</h2></aside>
-  </div>
-  <script src="/app.js"></script>
+    <div class="imageContainer">
+          
+        <img src="saiyan.png" alt="Saiyan" id="player">
+        
+    </div>
+    <div id="container">
+        <aside id="top-left">
+            <h2>Avoid Negativity </h2>
+        </aside>
+        <aside id="top-right">
+            <h2 id="movement">Use Arrow Keys</h2>
+        </aside>
+        <main>
+            <canvas id="game"><!-- Your game canvas --></canvas>
+        </main>
+        <aside id="btm-left">
+            <h2 id="score">1000</h2>
+        </aside>
+        <aside id="btm-right">
+            <h2 id="status">Play the Game</h2>
+        </aside>
+    </div>
+    <script src="/app.js"></script>
 </body>
 </html>
