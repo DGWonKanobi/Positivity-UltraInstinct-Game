@@ -1,7 +1,7 @@
-// Game Flow
-// ...
+// Game Flow Code
 
-// User input
+
+//Positive and Negative Descriptors
 
 const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
 const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
@@ -15,11 +15,7 @@ function getRandomPositive() {
     const randomIndex = Math.floor(Math.random() * positives.length);
     return positives[randomIndex];
 }
-
 //We can use the Math.random() function to generate a random number within the range of the array indices
-
-
-
 
 
 // Example usage:
@@ -32,6 +28,60 @@ console.log("Random Positive: " + randomPositive);
 
 
 
+// Countdown timer
+
+
+// Game instructions
+
+// Character movement
+document.addEventListener("keydown", moveCharacter);
+
+// Falling objects
+setInterval(createFallingObject, 1000); // Adjust timing as needed
+
+// Collision detection
+function detectCollision(character, object) {
+  // ...
+
+  if (collisionType === "positive") {
+    increaseLifeScore();
+  } else if (collisionType === "negative") {
+    decreaseLifeScore();
+  }
+}
+
+// Score tracking
+function updateLifeScore() {
+  // ...
+
+  // Determine user icon based on life score
+  // ...
+
+  // Check win condition
+  if (lifeScore >= highestAssignedValue) {
+    showWinScreen();
+  }
+}
+
+// Game win condition
+function showWinScreen() {
+  // ...
+
+  // Display Goku in Ultra Instinct and a congratulatory message
+}
+
+// Game over condition
+function showGameOverScreen() {
+  // ...
+
+  // Allow player to restart the game
+}
+
+// Sound and graphics
+// ...
+
+// Event handling (e.g., restart button)
+// ...
 
 
 
@@ -39,6 +89,9 @@ console.log("Random Positive: " + randomPositive);
 
 
 
+
+
+// Crawler reference code
 
 
 // ====================== PAINT INTIAL SCREEN ======================= //
