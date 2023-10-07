@@ -1,5 +1,5 @@
 // Game Flow
-// ...
+
 
 // User input
 
@@ -18,7 +18,7 @@ function getRandomPositive() {
 
 //We can use the Math.random() function to generate a random number within the range of the array indices
 
-
+// player constants
 const saiyanImage = document.querySelector('#saiyan')
 
 const player = {
@@ -32,18 +32,18 @@ const player = {
 
 // Initialize game variables
 let score = 0;
-let lifeScore = 100; // You can set the initial life score as needed
+let lifeScore = 100;
 let gameOver = false;
 
 
-function drawPlayer() {
+function makePlayer() {
     ctx.fillStyle = "#ff5733"; // Saiyan character color (orange)
     ctx.fillRect(player.x, player.y, player.width, player.height);
 
-
+}
 
     // Update and display life score
-function updateLifeScore() {
+function changeLifeScore() {
     if (!gameOver) {
         
         lifeScore -= 0.1;
@@ -60,14 +60,16 @@ function updateLifeScore() {
 }
 
 
-// Handle the end of the game
-function endGame() {
-    // Implement game over logic here
+// the end of the game
+function endOfGame() {
+    //  game over logic here
     // Display a message, reset the game, etc.
 }
 
 // Start the game loop
 gameLoop();
+
+
 
 // ====================== PAINT INTIAL SCREEN ======================= //
 // EVENT LISTENERS
