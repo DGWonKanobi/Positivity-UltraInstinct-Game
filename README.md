@@ -3,7 +3,7 @@ Game Type : A Mental Mindfulness Game
 
 Game Summary  :
 
-A game which allows users to enter negative descriptors that they want to be mindful to avoid while also entering positive descriptors they want to attract and manifest. The User Theme will be that of characters from popular  the popular anime Dragon Ball Z referred to mythically as the saiyans . These characters were obsessed with the  concept of trying to improve yourself. So the game will use them as character to practice positivity. 
+A game which allows users to practice positivity mindfulness by visially avoiding negative descriptors and pursuing positive ones. The User Theme will be that of characters from  the popular anime Dragon Ball Z referred to mythically as the saiyans . These characters were obsessed with the  concept of trying to improve themself everyday. So the game will use them as characters to practice positivity. 
 
 Game Objective : Game user will be a player who's character objective is to avoid objects with the negative assigned values while pursuing objects with positive assigned value. 
 
@@ -13,7 +13,7 @@ The User Icon will change depending on the life score the player has accumulted 
 
 Game Flow Road Map:
 
-Phase1 : Screen Launches with Prompt : "Welcome to Positivity Ultra Instinct".  User is prompted to enter their user name  followed by four things they want to focus on avoiding and also four things they want to focus on manifesting.
+Phase1 : Screen Launches with Prompt : "Welcome to Positivity Ultra Instinct". User is prompted to enter their User Name.
 
 Phase2 : After entering required information. Instructions with a 10 second count down clock appears advising the User to "Avoid the bad objects and capture the good ojects and you will break through all of your limits , master yourself and win the game!!! You Can do it!!! 
 
