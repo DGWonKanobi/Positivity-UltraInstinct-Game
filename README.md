@@ -3,7 +3,7 @@ Game Type : A Mental Mindfulness Game
 
 Game Summary  :
 
-A game which allows users to enter negative descriptors that they want to be mindful to avoid while also entering positive descriptors they want to attract and manifest. The User Theme will be that of characters from popular  the popular anime Dragon Ball Z referred to mythically as the saiyans . These characters were obsessed with the  concept of trying to improve yourself. So the game will use them as character to practice positivity. 
+A game which allows users to practice positivity mindfulness by visially avoiding negative descriptors and pursuing positive ones. The User Theme will be that of characters from  the popular anime Dragon Ball Z referred to mythically as the saiyans . These characters were obsessed with the  concept of trying to improve themself everyday. So the game will use them as characters to practice positivity. 
 
 Game Objective : Game user will be a player who's character objective is to avoid objects with the negative assigned values while pursuing objects with positive assigned value. 
 
