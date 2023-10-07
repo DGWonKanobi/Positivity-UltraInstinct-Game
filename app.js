@@ -31,8 +31,10 @@ function getRandomPositive() {
 // EVENT LISTENERS
 window.addEventListener('DOMContentLoaded', function () {
     //load the saiyan on the game opage 
-    saiyan = new Saiyan(100, 200, 'pink', 100, 50, );
-    enemy = new Enemies(50, 25, 60, 35, negatives[0]);
+    saiyan = new Saiyan(100, 200, 'pink', 100, 50,);
+    let randomNegative = getRandomNegative();
+
+    enemy = new Enemies(50, 25, 60, 35, randomNegative);
 
 
 
@@ -74,8 +76,8 @@ class Enemies {
     constructor(x, y, width, height, message,) {
         this.x = x;
         this.y = y;
-        
-this.width = width;
+
+        this.width = width;
         this.height = height;
         this.alive = true;
         this.message = message;
@@ -87,7 +89,7 @@ this.width = width;
             ctx.fillRect(20, 15, 60, 35);
             ctx.fillStyle = 'white';
             ctx.font = '16px Arial';
-            ctx.fillText(negatives[0], 30, 20 );
+            ctx.fillText(this.message, 30, 20);
 
         }
     }
