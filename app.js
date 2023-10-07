@@ -6,6 +6,7 @@
 const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
 const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
 
+const objects = []; 
 function getRandomNegative() {
     const randomIndex = Math.floor(Math.random() * negatives.length);
     return negatives[randomIndex];
@@ -16,58 +17,84 @@ function getRandomPositive() {
     return positives[randomIndex];
 }
 
-//We can use the Math.random() function to generate a random number within the range of the array indices
 
-// // player constants
-// const saiyanImage = document.querySelector('#saiyan')
+// Function to create a random falling object
+function createFallingObject() {
+    const x = Math.random() * canvas.width; // Random x-coordinate
+    const y = 0; // Start from the top of the canvas
+    const speed = Math.random() * 4 + 1; // Random speed for the object
+    const isNegative = Math.random() < 0.5; // Randomly choose negative or positive
 
-// const player = {
-//     x: canvas.width / 2,
-//     y: canvas.height - 30,
-//     width: 50,
-//     height: 50,
-//     speed: 5
-// };
+    const object = {
+        x,
+        y,
+        speed,
+        isNegative,
+        text: isNegative ? getRandomNegative() : getRandomPositive(),
+    };
+
+    objects.push(object);
+}
+
+// player constants
+const saiyanImage = document.querySelector('#saiyan')
+
+const player = {
+    x: canvas.width / 2,
+    y: canvas.height - 30,
+    width: 50,
+    height: 50,
+    speed: 5
+};
+
+// Initialize game variables
+let score = 0;
+let lifeScore = 100;
+let gameOver = false;
 
 
-// // Initialize game variables
-// let score = 0;
-// let lifeScore = 100;
-// let gameOver = false;
+function makePlayer() {
+    ctx.fillStyle = "#ff5733"; // Saiyan character color (orange)
+    ctx.fillRect(player.x, player.y, player.width, player.height);
 
+}
+// Collision detection
+function detectCollision(character, object) {
+    // ...
+  
+    if (collisionType === "positive") {
+      increaseLifeScore();
+    } else if (collisionType === "negative") {
+      decreaseLifeScore();
+    }
+  }
 
-// function makePlayer() {
-//     ctx.fillStyle = "#ff5733"; // Saiyan character color (orange)
-//     ctx.fillRect(player.x, player.y, player.width, player.height);
-
-// }
-
-//     // Update and display life score
-// function changeLifeScore() {
-//     if (!gameOver) {
+// Update and display life score
+function changeLifeScore() {
+    if (!gameOver) {
         
-//         lifeScore -= 0.1;
+        lifeScore -= 0.1;
 
-//         // Display the updated life score
-//         document.getElementById("score").textContent = Math.round(lifeScore);
+        // Display the updated life score
+        document.getElementById("score").textContent = Math.round(lifeScore);
 
-//         // Check for game over condition
-//         if (lifeScore <= 0) {
-//             gameOver = true;
-//             endGame();
-//         }
-//     }
-// }
+        // Check for game over condition
+        if (lifeScore <= 0) {
+            gameOver = true;
+            endGame();
+        }
+    }
+}
 
 
-// // the end of the game
-// function endOfGame() {
-//     //  game over logic here
-//     // Display a message, reset the game, etc.
-// }
+// the end of the game
+function endOfGame() {
+    //  game over logic here
+    // Display a message, reset the game, etc.
+}
 
-// // Start the game loop
-// gameLoop();
+// Start the game loop
+gameLoop();
 
 
 
@@ -109,7 +136,6 @@ class Saiyan {
 // testCrawler.render();
 
 // KEYBOARD LOGIC
-
 function movementHandler(e) {
 
     // make a conditional for each direction
@@ -148,15 +174,15 @@ function addNewSaiyan() {
 function gameLoop() {
     // clear the canvas
     ctx.clearRect(0, 0, game.width, game.height)
-    //display x and y coordinates for our donkey
+    //display x and y coordinates for our saiyan
     movement.textContent = `X: ${saiyan.x}\nY: ${saiyan.y}`;
 
-    // check to see if shrek is alive
+    // check to see if saiyan is alive
     if (saiyan.alive) {
         // render the shrek
         saiyan.render();
-        // check for collision between donkey and shrek
-        let hit = detectHit(donkey, shrek);
+        // check for collision between saiyan and objects
+        let hit = detectHit(sayain, positiveObj, negativeObj);
 
 
     }
