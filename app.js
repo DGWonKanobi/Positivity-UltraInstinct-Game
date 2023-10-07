@@ -18,56 +18,56 @@ function getRandomPositive() {
 
 //We can use the Math.random() function to generate a random number within the range of the array indices
 
-// player constants
-const saiyanImage = document.querySelector('#saiyan')
+// // player constants
+// const saiyanImage = document.querySelector('#saiyan')
 
-const player = {
-    x: canvas.width / 2,
-    y: canvas.height - 30,
-    width: 50,
-    height: 50,
-    speed: 5
-};
-
-
-// Initialize game variables
-let score = 0;
-let lifeScore = 100;
-let gameOver = false;
+// const player = {
+//     x: canvas.width / 2,
+//     y: canvas.height - 30,
+//     width: 50,
+//     height: 50,
+//     speed: 5
+// };
 
 
-function makePlayer() {
-    ctx.fillStyle = "#ff5733"; // Saiyan character color (orange)
-    ctx.fillRect(player.x, player.y, player.width, player.height);
+// // Initialize game variables
+// let score = 0;
+// let lifeScore = 100;
+// let gameOver = false;
 
-}
 
-    // Update and display life score
-function changeLifeScore() {
-    if (!gameOver) {
+// function makePlayer() {
+//     ctx.fillStyle = "#ff5733"; // Saiyan character color (orange)
+//     ctx.fillRect(player.x, player.y, player.width, player.height);
+
+// }
+
+//     // Update and display life score
+// function changeLifeScore() {
+//     if (!gameOver) {
         
-        lifeScore -= 0.1;
+//         lifeScore -= 0.1;
 
-        // Display the updated life score
-        document.getElementById("score").textContent = Math.round(lifeScore);
+//         // Display the updated life score
+//         document.getElementById("score").textContent = Math.round(lifeScore);
 
-        // Check for game over condition
-        if (lifeScore <= 0) {
-            gameOver = true;
-            endGame();
-        }
-    }
-}
+//         // Check for game over condition
+//         if (lifeScore <= 0) {
+//             gameOver = true;
+//             endGame();
+//         }
+//     }
+// }
 
 
-// the end of the game
-function endOfGame() {
-    //  game over logic here
-    // Display a message, reset the game, etc.
-}
+// // the end of the game
+// function endOfGame() {
+//     //  game over logic here
+//     // Display a message, reset the game, etc.
+// }
 
-// Start the game loop
-gameLoop();
+// // Start the game loop
+// gameLoop();
 
 
 
