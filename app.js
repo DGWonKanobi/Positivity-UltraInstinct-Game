@@ -28,70 +28,7 @@ console.log("Random Positive: " + randomPositive);
 
 
 
-// Countdown timer
 
-
-// Game instructions
-
-// Character movement
-document.addEventListener("keydown", moveCharacter);
-
-// Falling objects
-setInterval(createFallingObject, 1000); // Adjust timing as needed
-
-// Collision detection
-function detectCollision(character, object) {
-  // ...
-
-  if (collisionType === "positive") {
-    increaseLifeScore();
-  } else if (collisionType === "negative") {
-    decreaseLifeScore();
-  }
-}
-
-// Score tracking
-function updateLifeScore() {
-  // ...
-
-  // Determine user icon based on life score
-  // ...
-
-  // Check win condition
-  if (lifeScore >= highestAssignedValue) {
-    showWinScreen();
-  }
-}
-
-// Game win condition
-function showWinScreen() {
-  // ...
-
-  // Display Goku in Ultra Instinct and a congratulatory message
-}
-
-// Game over condition
-function showGameOverScreen() {
-  // ...
-
-  // Allow player to restart the game
-}
-
-// Sound and graphics
-// ...
-
-// Event handling (e.g., restart button)
-// ...
-
-
-
-
-
-
-
-
-
-// Crawler reference code
 
 
 // ====================== PAINT INTIAL SCREEN ======================= //
