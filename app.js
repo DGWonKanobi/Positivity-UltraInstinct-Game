@@ -32,6 +32,7 @@ function getRandomPositive() {
 window.addEventListener('DOMContentLoaded', function () {
     //load the saiyan on the game opage 
     saiyan = new Saiyan(100, 200, 'pink', 100, 50, );
+    enemy = new Enemies(50, 25, 60, 35, negatives[0]);
 
 
 
@@ -82,12 +83,11 @@ this.width = width;
 
 
         this.render = function () {
-            ctx.fillStyle = rgba(0, 0, 0, 0.5);
+            ctx.fillStyle = "rgba(0, 0, 0, 0)";
             ctx.fillRect(20, 15, 60, 35);
             ctx.fillStyle = 'white';
-            ctx.fillText(this.message, this.x + 10, this.y + 20);
             ctx.font = '16px Arial';
-            ctx.fillText(negatives[0], 70, 90);
+            ctx.fillText(negatives[0], 30, 20 );
 
         }
     }
@@ -140,6 +140,7 @@ function gameLoop() {
 
 
     saiyan.render();
+    enemy.render();
 }
 // ====================== COLLISION DETECTION ======================= //
 
