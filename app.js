@@ -2,11 +2,18 @@
 
 
 // User input
+const movement = document.querySelector('#movement');
+const game = document.querySelector('#game');
+const score = document.querySelector('#score');
+const status = document.querySelector('#status');
+const ctx = game.getContext('2d');
+let saiyan;
 
+let saiyanImage = document.querySelector("#goku")
 const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
 const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
 
-const objects = []; 
+const objects = [];
 function getRandomNegative() {
     const randomIndex = Math.floor(Math.random() * negatives.length);
     return negatives[randomIndex];
@@ -37,20 +44,16 @@ function createFallingObject() {
 }
 
 // player constants
-const saiyanImage = document.querySelector('#saiyan')
+// const saiyanImage = document.querySelector('#saiyan')
 
-const player = {
-    x: canvas.width / 2,
-    y: canvas.height - 30,
-    width: 50,
-    height: 50,
-    speed: 5
-};
+// const player = {
+//     x: canvas.width / 2,
+//     y: canvas.height - 30,
+//     width: 50,
+//     height: 50,
+//     speed: 5
+// };
 
-// Initialize game variables
-let score = 0;
-let lifeScore = 100;
-let gameOver = false;
 
 
 function makePlayer() {
@@ -58,43 +61,43 @@ function makePlayer() {
     ctx.fillRect(player.x, player.y, player.width, player.height);
 
 }
-// Collision detection
-function detectCollision(character, object) {
-    // ...
-  
-    if (collisionType === "positive") {
-      increaseLifeScore();
-    } else if (collisionType === "negative") {
-      decreaseLifeScore();
-    }
-  }
+// // Collision detection
+// function detectCollision(character, object) {
+//     // ...
 
-// Update and display life score
-function changeLifeScore() {
-    if (!gameOver) {
-        
-        lifeScore -= 0.1;
+//     if (collisionType === "positive") {
+//         increaseLifeScore();
+//     } else if (collisionType === "negative") {
+//         decreaseLifeScore();
+//     }
+// }
 
-        // Display the updated life score
-        document.getElementById("score").textContent = Math.round(lifeScore);
+// // Update and display life score
+// function changeLifeScore() {
+//     if (!gameOver) {
 
-        // Check for game over condition
-        if (lifeScore <= 0) {
-            gameOver = true;
-            endGame();
-        }
-    }
-}
+//         lifeScore -= 0.1;
+
+//         // Display the updated life score
+//         document.getElementById("score").textContent = Math.round(lifeScore);
+
+//         // Check for game over condition
+//         if (lifeScore <= 0) {
+//             gameOver = true;
+//             endGame();
+//         }
+//     }
+// }
 
 
-// the end of the game
-function endOfGame() {
-    //  game over logic here
-    // Display a message, reset the game, etc.
-}
+// // the end of the game
+// function endOfGame() {
+//     //  game over logic here
+//     // Display a message, reset the game, etc.
+// }
 
-// Start the game loop
-gameLoop();
+
+
 
 
 
@@ -102,8 +105,9 @@ gameLoop();
 // EVENT LISTENERS
 window.addEventListener('DOMContentLoaded', function () {
     //load the saiyan on the game opage 
-    saiyan = new Saiyan(100, 200, '#bad55', 50, 100);
-    
+    saiyan = new Saiyan(100, 200, 'pink', 100, 50, );
+
+
 
     let runGame = setInterval(gameLoop, 60);
 })
@@ -117,18 +121,48 @@ game.setAttribute('width', getComputedStyle(game)['width']);
 
 // ====================== ENTITIES ======================= //
 class Saiyan {
-    constructor(x, y, color, width, height) {
+    constructor(x, y, color, width, height, message,) {
         this.x = x;
         this.y = y;
         this.color = color;
         this.width = width;
         this.height = height;
         this.alive = true;
+        this.message = message;
+
 
 
         this.render = function () {
-            ctx.fillStyle = this.color;
-            ctx.fillRect(this.x, this.y, this.width, this.height)
+            // ctx.fillStyle = this.color;
+            // ctx.fillRect(this.x, this.y, this.width, this.height)
+            // ctx.fillStyle = 'blue';
+            // ctx.fillText(this.message, this.x + 10, this.y + 20);
+            ctx.drawImage(saiyanImage, this.x, this.y, this.width, this.height)
+
+        }
+    }
+}
+
+class Enemies {
+    constructor(x, y, width, height, message,) {
+        this.x = x;
+        this.y = y;
+        
+this.width = width;
+        this.height = height;
+        this.alive = true;
+        this.message = message;
+
+
+
+        this.render = function () {
+            ctx.fillStyle = rgba(0, 0, 0, 0.5);
+            ctx.fillRect(20, 15, 60, 35);
+            ctx.fillStyle = 'white';
+            ctx.fillText(this.message, this.x + 10, this.y + 20);
+            ctx.font = '16px Arial';
+            ctx.fillText(negatives[0], 70, 90);
+
         }
     }
 }
@@ -177,16 +211,8 @@ function gameLoop() {
     //display x and y coordinates for our saiyan
     movement.textContent = `X: ${saiyan.x}\nY: ${saiyan.y}`;
 
-    // check to see if saiyan is alive
-    if (saiyan.alive) {
-        // render the shrek
-        saiyan.render();
-        // check for collision between saiyan and objects
-        let hit = detectHit(sayain, positiveObj, negativeObj);
 
 
-    }
-    //render the donkey
     saiyan.render();
 }
 // ====================== COLLISION DETECTION ======================= //
