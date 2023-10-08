@@ -93,7 +93,7 @@ class Enemies {
             // ctx.fillStyle = 'white';
             // ctx.font = '16px Arial';
             // ctx.fillText(this.message, 30, 20);
-            ctx.drawImage(saiyanImage, this.x, this.y, this.width, this.height)
+            ctx.drawImage(freezaImage, this.x, this.y, this.width, this.height)
 
         }
         }
