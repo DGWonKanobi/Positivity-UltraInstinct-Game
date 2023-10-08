@@ -60,8 +60,7 @@ class Character extends Saiyan {
 }
 
 
-let goku1 = new Character(gokuImage, 200, 300, 'blue', 50, 50)
-goku1.render()
+
 // let testCrawler = new Crawler(150, 20, 'blue', 200, 200);
 // testCrawler.render();
 
@@ -85,7 +84,7 @@ function movementHandler(e) {
 
 // ====================== HELPER FUNCTIONS ======================= //
 function addNewgoku() {
-    goku.alive = false;
+    
     //use setTime function createa new Shrek after1 second ( 1000 milliseconds)
     setTimeout(function () {
         let randomX = Math.floor(Math.random() * game.width - 40);
