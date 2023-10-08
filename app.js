@@ -8,8 +8,11 @@ const score = document.querySelector('#score');
 const status = document.querySelector('#status');
 const ctx = game.getContext('2d');
 let saiyan;
+let enemy;
 
 let saiyanImage = document.querySelector("#goku")
+let freezaImage = document.querySelector("#freeza")
+
 const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
 const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
 
@@ -50,18 +53,18 @@ game.setAttribute('width', getComputedStyle(game)['width']);
 
 // ====================== ENTITIES ======================= //
 class Saiyan {
-    constructor(x, y, color, width, height, message,) {
+    constructor(x, y, color, width, height,) {
         this.x = x;
         this.y = y;
         this.color = color;
         this.width = width;
         this.height = height;
         this.alive = true;
-        this.message = message;
+        
 
 
 
-        this.render = function () {
+    this.render = function () {
             // ctx.fillStyle = this.color;
             // ctx.fillRect(this.x, this.y, this.width, this.height)
             // ctx.fillStyle = 'blue';
@@ -71,7 +74,6 @@ class Saiyan {
         }
     }
 }
-
 class Enemies {
     constructor(x, y, width, height, message,) {
         this.x = x;
@@ -81,19 +83,22 @@ class Enemies {
         this.height = height;
         this.alive = true;
         this.message = message;
+        
 
 
 
         this.render = function () {
-            ctx.fillStyle = "rgba(0, 0, 0, 0)";
-            ctx.fillRect(20, 15, 60, 35);
-            ctx.fillStyle = 'white';
-            ctx.font = '16px Arial';
-            ctx.fillText(this.message, 30, 20);
+            // ctx.fillStyle = "rgba(0, 0, 0, 0)";
+            // ctx.fillRect(20, 15, 60, 35);
+            // ctx.fillStyle = 'white';
+            // ctx.font = '16px Arial';
+            // ctx.fillText(this.message, 30, 20);
+            ctx.drawImage(saiyanImage, this.x, this.y, this.width, this.height)
 
         }
+        }
     }
-}
+
 // let testCrawler = new Crawler(150, 20, 'blue', 200, 200);
 // testCrawler.render();
 
