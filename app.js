@@ -9,6 +9,7 @@ const status = document.querySelector('#status');
 const ctx = game.getContext('2d');
 let saiyan;
 let enemy;
+let enemy2
 
 let saiyanImage = document.querySelector("#goku")
 let freezaImage = document.querySelector("#freeza")
@@ -40,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function () {
     let randomNegative = getRandomNegative();
 
     enemy = new Enemies(50, 25, 60, 35, randomNegative);
-
+    enemy2 = new Enemies(100, 50, 60, 35, randomNegative);
 
 
     let runGame = setInterval(gameLoop, 60);
@@ -150,6 +151,7 @@ function gameLoop() {
 
     saiyan.render();
     enemy.render();
+    enemy2.render();
 }
 // ====================== COLLISION DETECTION ======================= //
 
