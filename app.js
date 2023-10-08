@@ -12,6 +12,8 @@ let enemy;
 
 let saiyanImage = document.querySelector("#goku")
 let freezaImage = document.querySelector("#freeza")
+let jirenImage = document.querySelector("#jiren")
+let cellImage = document.querySelector("#cell")
 
 const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
 const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
