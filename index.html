@@ -12,39 +12,13 @@
 
 <body>
     <div class="game-container">
-        <div class="game-header">
-            <h1>Welcome to Positivity Ultra Instinct</h1>
-            <p>Enter your username </p>
-            <input type="text" id="username" placeholder="Enter your username">
-
-            <div class="game-content">
-                <div id="player"></div>
-                <!-- Falling objects will be added dynamically using JavaScript -->
-            </div>
-            <div class="game-footer">
-                <div class="life-score">
-                    <p>Life Score:</p>
-                    <span id="score">10,000</span>
-                </div>
-                <div class="user-icon">
-                    <!-- Icons representing different life score ranges -->
-                    <img src="img/saiyan1.jpeg" alt="Icon 1" id ="goku">
-                    <img src="./img/UIgoku.jpeg" alt="Icon 1" id ="goku">
-                    <img src="./img/cell image.jpeg" alt="Icon 2" id = "cell">
-                     <img src="./img/jiren-image.jpeg" alt="Icon 1" id ="jiren-image">
-                     <img src="./img/golden-freeza.jpeg" alt="Icon 3" id = "freeza">
-
-                    
-
-                </div>
-            </div>
+        <div class="imageContainer">
+            <img src="img/saiyan1.jpeg" alt="goku" id="goku" style="display: none;">
+            <img src="./img/jiren-image.jpeg" alt="jiren" id="jiren" style="display: none;">
         </div>
-
-
-
         <div id="container">
             <aside id="top-left">
-                <h2>Defeat Your Enemies!! Master Yourself</h2>
+                <h2>Welcome to the Tournament of Power!!</h2>
             </aside>
             <aside id="top-right">
                 <h2 id="movement"></h2>
@@ -56,9 +30,13 @@
                 <h2 id="score">10000</h2>
             </aside>
             <aside id="btm-right">
-                <h2 id="status"></h2>
+                <h2 id="status">Beat The Enemies!! Achieve Ultra Instinct!! </h2>
             </aside>
         </div>
+
+
+
+
         <script src="app.js"></script>
 </body>
 

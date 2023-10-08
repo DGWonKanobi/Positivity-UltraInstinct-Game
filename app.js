@@ -2,46 +2,24 @@
 
 
 // User input
+const gokuImage = document.querySelector("#goku");
+const jirenImage = document.querySelector("#jiren");
 const movement = document.querySelector('#movement');
 const game = document.querySelector('#game');
 const score = document.querySelector('#score');
 const status = document.querySelector('#status');
 const ctx = game.getContext('2d');
-let saiyan;
-let enemy;
-let enemy2
-
-let saiyanImage = document.querySelector("#goku")
-let freezaImage = document.querySelector("#freeza")
-let jirenImage = document.querySelector("#jiren")
-let cellImage = document.querySelector("#cell")
-
-const negatives = ["Negativity", "Complaining", "Gossip", "Stress"];
-const positives = ["Gratitude", "Abundance", "Health", "Positivity"];
-
-const objects = [];
-function getRandomNegative() {
-    const randomIndex = Math.floor(Math.random() * negatives.length);
-    return negatives[randomIndex];
-}
-
-function getRandomPositive() {
-    const randomIndex = Math.floor(Math.random() * positives.length);
-    return positives[randomIndex];
-}
-
-
-
+let goku;
+let jiren;
 
 // ====================== PAINT INTIAL SCREEN ======================= //
 // EVENT LISTENERS
 window.addEventListener('DOMContentLoaded', function () {
     //load the saiyan on the game opage 
-    saiyan = new Saiyan(100, 200, 'pink', 100, 50,);
-    let randomNegative = getRandomNegative();
+    goku = new Character(gokuImage, 100, 200, 'pink', 100, 50,);
+    jiren = new Character(jirenImage, 10, 10, 'red', 75, 75)
 
-    enemy = new Enemies(50, 25, 60, 35, randomNegative);
-    enemy2 = new Enemies(100, 50, 60, 35, randomNegative);
+    
 
 
     let runGame = setInterval(gameLoop, 60);
@@ -56,52 +34,34 @@ game.setAttribute('width', getComputedStyle(game)['width']);
 
 // ====================== ENTITIES ======================= //
 class Saiyan {
-    constructor(x, y, color, width, height,) {
+    constructor(x, y, color, width, height) {
         this.x = x;
         this.y = y;
         this.color = color;
         this.width = width;
         this.height = height;
         this.alive = true;
-        
-
-
-
-    this.render = function () {
-            // ctx.fillStyle = this.color;
-            // ctx.fillRect(this.x, this.y, this.width, this.height)
-            // ctx.fillStyle = 'blue';
-            // ctx.fillText(this.message, this.x + 10, this.y + 20);
-            ctx.drawImage(saiyanImage, this.x, this.y, this.width, this.height)
-
-        }
-    }
-}
-class Enemies {
-    constructor(x, y, width, height, message,) {
-        this.x = x;
-        this.y = y;
-
-        this.width = width;
-        this.height = height;
-        this.alive = true;
-        this.message = message;
-        
-
 
 
         this.render = function () {
-            // ctx.fillStyle = "rgba(0, 0, 0, 0)";
-            // ctx.fillRect(20, 15, 60, 35);
-            // ctx.fillStyle = 'white';
-            // ctx.font = '16px Arial';
-            // ctx.fillText(this.message, 30, 20);
-            ctx.drawImage(freezaImage, this.x, this.y, this.width, this.height)
-
-        }
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height)
         }
     }
+}
+class Character extends Saiyan {
+    constructor(image, ...args) {
+        super(...args)
+        this.image = image;
+        this.render = function () {
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
+        }
+    }
+}
 
+
+let goku1 = new Character(gokuImage, 200, 300, 'blue', 50, 50)
+goku1.render()
 // let testCrawler = new Crawler(150, 20, 'blue', 200, 200);
 // testCrawler.render();
 
@@ -110,13 +70,13 @@ function movementHandler(e) {
 
     // make a conditional for each direction
     if (e.key === 'w' || e.key === 'ArrowUp') {
-        saiyan.y - 10 >= 0 ? (saiyan.y -= 10) : null;
+        goku.y - 10 >= 0 ? (goku.y -= 10) : null;
     } else if (e.key === 's' || e.key === 'ArrowDown') {
-        saiyan.y + 10 <= game.height - saiyan.height ? (saiyan.y += 10) : null;
+        goku.y + 10 <= game.height - goku.height ? (goku.y += 10) : null;
     } else if (e.key === 'a' || e.key === 'ArrowLeft') {
-        saiyan.x - 10 >= 0 ? (saiyan.x -= 10) : null;
+        goku.x - 10 >= 0 ? (goku.x -= 10) : null;
     } else if (e.key === 'd' || e.key === 'ArrowRight') {
-        saiyan.x + 10 <= game.width - saiyan.width ? (saiyan.x += 10) : null;
+        goku.x + 10 <= game.width - goku.width ? (goku.x += 10) : null;
     }
 
 }
@@ -124,8 +84,8 @@ function movementHandler(e) {
 
 
 // ====================== HELPER FUNCTIONS ======================= //
-function addNewSaiyan() {
-    saiyan.alive = false;
+function addNewgoku() {
+    goku.alive = false;
     //use setTime function createa new Shrek after1 second ( 1000 milliseconds)
     setTimeout(function () {
         let randomX = Math.floor(Math.random() * game.width - 40);
@@ -135,7 +95,7 @@ function addNewSaiyan() {
         let randomIndex = Math.floor(Math.random() * colors.length - 1);
         let randomColor = colors[randomIndex];
         // create new Shrek
-        saiyan = new Saiyan(randomX, randomY, randomColor, 50, 100);
+        goku = new Character(gokuImage, randomX, randomY, randomColor, 50, 100);
     }, 1000);
     return true;
 }
@@ -145,13 +105,14 @@ function gameLoop() {
     // clear the canvas
     ctx.clearRect(0, 0, game.width, game.height)
     //display x and y coordinates for our saiyan
-    movement.textContent = `X: ${saiyan.x}\nY: ${saiyan.y}`;
+    movement.textContent = `X: ${goku.x}\nY: ${goku.y}`;
+if (goku.alive){
+    goku.render()
+    let hit = detectHit(jiren, goku)
+}
 
-
-
-    saiyan.render();
-    enemy.render();
-    enemy2.render();
+    jiren.render();
+    
 }
 // ====================== COLLISION DETECTION ======================= //
 
@@ -169,7 +130,7 @@ function detectHit(player, opp) {
         console.log(score.textContent);
         score.textContent = newScore;
         // return a new Shrek with the addNewShrek function
-        return addNewSaiyan();
+        return addNewgoku();
     } else {
         return false;
     }
