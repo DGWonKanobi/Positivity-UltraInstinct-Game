@@ -9,6 +9,7 @@ const game = document.querySelector('#game');
 const score = document.querySelector('#score');
 const status = document.querySelector('#status');
 const ctx = game.getContext('2d');
+const audio = document.querySelector("#audio");
 let goku;
 let jiren;
 
@@ -124,6 +125,7 @@ function detectHit(player, opp) {
     );
     console.log(hitTest);
     if (hitTest) {
+        
         //add 100 points to current score
         let newScore = Number(score.textContent) + 100;
         console.log(score.textContent);
