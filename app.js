@@ -17,8 +17,8 @@ let jiren;
 // EVENT LISTENERS
 window.addEventListener('DOMContentLoaded', function () {
     //load the saiyan on the game opage 
-    goku = new Character(gokuImage, 100, 200, 'pink', 100, 50,);
-    jiren = new Character(jirenImage, 10, 10, 'red', 75, 75)
+    goku = new Character(gokuImage, 340, 300, 'pink', 100, 50,);
+    jiren = new Character(jirenImage, 340, 10, 'red', 75, 75)
 
     
 

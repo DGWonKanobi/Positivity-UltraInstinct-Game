@@ -15,7 +15,7 @@ html,body {
   h1, h2 {
     font-family: 'Press Start 2P', monospace;
     /* font-family: monospace; */
-    color: rgb(20, 42, 241);
+    color: rgb(240, 27, 4);
   }
   
   canvas {
@@ -30,7 +30,7 @@ html,body {
   #container {
   max-width: 50em;
   /* height: 70vh; */
-  background-color: rgb(111, 234, 63);
+  background-color: rgb(36, 74, 241);
   margin: 0 auto;
   padding: 1em;
   display: grid;
