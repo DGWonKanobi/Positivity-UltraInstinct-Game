@@ -1,7 +1,16 @@
 The Tournament Of Power
 Game Type : Anime Battle
 
-Game Summary  :
+//Installation Instructions:
+1. Open Terminal
+2. cd to Desktop
+3. cd to General Assembly Folder
+4. cd to General Unit 1 Folder
+5. cd to General Deliverables Folder
+6. cd to Positivity Ultra Instict Folder
+7. type open index.html and hit return to launch the Game screen.
+
+//Game Summary  :
 
 The Game is  one that pays hommage to one of the most Inspirational Anime Characters of our modern era, the Saiyan Warrior who goes by the name of Goku and Kakarot.
 
@@ -12,9 +21,13 @@ In Goku's greatest challenge yet, he faces an Adversary by the name of Jiren in 
 This game allows the player to play as the antagonist (Jiren) , flying toward our hero protaginist (goku) , observing the rendering of an intense final attack then allowing the user to observe the final battle that played out deep within the digital html-css-javascript universe.
 
 
+//Overall Approach:
+
+The Project Shrek Crawler was used as a guideline to construct the code for the game utilizing its manipulation of the canvas and using Classes to create characters that render on the canvas and can then be moved to iteract with eacother.
+
 JavaScript breakdown:
 
-We built our code with 1 app.js file for readability and ease of access.
+We built our code with 1 app.js file.
 
 We created constants and gave them the appropirate ids and classes to be able to manipulate the game screen and canvas.
 
@@ -73,20 +86,19 @@ Created to add Images and enhaces aethtic to the game page. with url links servi
 
 
 <!-- <div class="container">
-    <button type="button" id="startBtn" onclick="startGame()" >
-        <img id='gameStart' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPfcaXDy2CXH9JdTVL8rkdBIGXoT51XQJ_nw&usqp=CAU"
+    <!-- <button type="button" id="startBtn" onclick="startGame()" > -->
+        <img id='' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPfcaXDy2CXH9JdTVL8rkdBIGXoT51XQJ_nw&usqp=CAU"
     </button>
-    <button type='button' class='modeBtn' id='single'>Computer</button>
-    <button type="button" id="startBtn" onclick="startGame()" >
-        <img id='gameStart' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSozpDd_rMps_YwjRZDAFN7fxGllqmmm1Uang&usqp=CAU">
+    <button type='button' class='' id=''>Computer</button>
+    <!-- <button type="button" id="startBtn" onclick="startGame()" > -->
+        <img id='' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSozpDd_rMps_YwjRZDAFN7fxGllqmmm1Uang&usqp=CAU">
     </button>
-    <button type='button' class='modeBtn' id='single'>Player 1</button>
-    <button type="button" id="startBtn" onclick="startGame()" >
+    <button type='button' class='' id=''>Player 1</button>
+    <!-- <button type="button" id="startBtn" onclick="startGame()" > -->
         <img id='gameStart' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmxPggwdgfqVjgdlaWlKxMl9ae8DX0N4lGxg&usqp=CAU">
     </button>
-     -->
-    </div> 
- -->
+    
+    </div>  -->
 Media: 
 
 Audio and Video tags were used to access local files to be displayed and played on the game screen as part of the game instructions.
@@ -98,4 +110,6 @@ Audio and Video tags were used to access local files to be displayed and played 
 <video controls  src="/Users/darrengardner/Downloads/tournament.mov" style="display: internal;">
 </video> -->
  
+
+
 
