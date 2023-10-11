@@ -3,28 +3,28 @@ Game Type : Anime Battle
 
 Game Summary  :
 
-The Game is  one that pays hommage to one of the most Inspiratiional Anime Characters of our modern era. The Saiyan Warrior who goes by the name of Goku and Kakarot.
+The Game is  one that pays hommage to one of the most Inspirational Anime Characters of our modern era, the Saiyan Warrior who goes by the name of Goku and Kakarot.
 
-This Character has embodied the growth mindset  of wanting to become a better version of himself every day. The Saiyans affectionately referred to it as "gettting stronger", and we the fanbaseinternalize it as chasing mastery.
+This Character has embodied the growth mindset  of wanting to become a better version of himself every day. The Saiyans affectionately referred to this as "gettting stronger", and we ,the fanbase, internalize it as chasing mastery.
 
-In Gokus greatest challenge yet, he faces an Adversary by the name of Jiren in the Tournament of Power where he breaks through his limits, achieves the ultimate fighting technique only wielded by gods called Ultra Intinct. 
+In Goku's greatest challenge yet, he faces an Adversary by the name of Jiren in the Tournament of Power where he breaks through his limits, achieves the ultimate fighting technique only wielded by gods called Ultra Intinct. 
 
 This game allows the player to play as the antagonist (Jiren) , flying toward our hero protaginist (goku) , observing the rendering of an intense final attack then allowing the user to observe the final battle that played out deep within the digital html-css-javascript universe.
 
 
-javaScript breakdown:
+JavaScript breakdown:
 
-We built our code  1 appjs file for readability and ease of access.
+We built our code with 1 app.js file for readability and ease of access.
 
 We created constants and gave them the appropirate ids and classes to be able to manipulate the game screen and canvas.
 
-We built a functions with an event listener to  load the  characters on the game page.
+We built a functions with an event listener to  load the  characters on to the game page.
 
 Two Classes (Saiyan and Character) were constructed to reperesent both the two players in the game.
 
 A function  movementHandler was constructed to control the movement of the player by keyboard arrows.
 
-A function  detectHit was constructed to detect when the two player make contact which is then ran in the gameloop function.
+A function  detectHit was constructed to detect when the two players make contact which is then ran in the gameloop function.
 
 A function  was created to regenerate the user player after contact with the computer user.
  
@@ -98,11 +98,4 @@ Audio and Video tags were used to access local files to be displayed and played 
 <video controls  src="/Users/darrengardner/Downloads/tournament.mov" style="display: internal;">
 </video> -->
  
-
-
-
-
-
-
-
 
